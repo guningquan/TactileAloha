@@ -84,7 +84,7 @@
     <div class="container">
       <div class="container has-text-centered">
         <h1 class="title is-1 publication-title">
-          Touch Is Your Need: <span style="display: block;">Learning to Manipulate with Tactile Sensing</span>
+          TactileAloha: <span style="display: block;">Learning to Manipulate with Tactile Sensing</span>
       </h1>
         <div class="is-size-5 publication-authors" style="display: flex; justify-content: center; gap: 20px;">
           <div class="author-block">
@@ -113,7 +113,7 @@
         <span class="icon">
           <i class="ai ai-arxiv"></i>
         </span>
-        <span>arXiv</span>
+        <span>arXiv (coming Soon)</span>
       </a>
     </span>
     
@@ -163,14 +163,15 @@
           <p>
             Tactile texture is vital for robotic manipulation but is sometimes difficult to observe.
 	To address this issue, we propose TactileAloha, a tactile sensing module mounted on the Aloha system to provide texture information of touched objects, enhancing manipulation capabilities.
-	During the training process, tactile information is encoded by a U-Net and combined with encoded camera images before being input into an Action Chunking with Transformers based policy, which is co-trained with the existing Aloha dataset.
+	During the training process, tactile information is encoded by ResNet and combined with encoded camera images before being input into an Action Chunking with Transformers-based policy.
 	The policy then outputs a sequence of predicted actions, which is used to compute the loss against ground truth actions.
 	We define a novel loss function, assigning higher weights to more recent actions in the prediction sequence while exponentially decaying the weights of actions that are further away in the sequence.
-	During deployment, we integrate Temporal Proximity Ensembling, which queries the policy at each timestep and aggregates the corresponding predicted actions within a preset temporal span. To enhance precision, more recent predictions are assigned higher importance, ensuring the policy remains focused on recent actions. This approach improves action accuracy while preserving smoothness.
+    To enhance performance, we co-train the policy with the previous Aloha dataset, despite its lack of tactile information and the presence of redundant data.
+	During deployment, we integrate Temporal Proximity Ensembling, which queries the policy at each timestep and aggregates the corresponding predicted actions within a preset temporal span. To enhance precision, more recent predictions are assigned higher importance, ensuring the policy remains focused on recent actions. This method improves action accuracy while preserving smoothness.
 	Experimentally, we introduce two tasks: zip-tie insertion and Velcro fastening, both of which are highly sensitive to the grasping orientation of objects.
 	Tactile sensing helps perceive the object's orientation, enhancing manipulation accuracy.
 	For the two tasks, we collect 80 and 50 demonstrations for training.
-	The results demonstrate that our method, leveraging gripper tactile information, is capable of handling texture-related tasks, which cannot be addressed by camera vision-based methods. Moreover, our method achieves an average improvement of approximately 11.0% compared to SOTA, demonstrating the effectiveness of our policy.
+	The results demonstrate that our approach, leveraging gripper tactile information, is capable of handling texture-related tasks, which cannot be addressed by camera vision-based methods. Moreover, our method achieves an average improvement of approximately 11.0% compared to SOTA, demonstrating its performance.
           </p>
         </div>
       </div>
@@ -264,7 +265,7 @@
                 <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
                   <source src="./static/videos/velcro/velcro_no_tactile.mp4" type="video/mp4">
                 </video>
-                <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Other Methods Using Only Camera Vision (Failed Due to the Incorrect Orientation of the Velcro; the Velcro Could Not Engage with Another Piece)</h3>
+                <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Other Methods Using Only Camera Vision <span style="display: block;"></span> (Failed Due to the Incorrect Orientation of the Velcro; the Velcro Could Not Engage with Another Piece)</h3>
                 <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
               </div>
     </div>
