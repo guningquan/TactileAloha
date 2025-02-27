@@ -84,12 +84,16 @@
     <div class="container">
       <div class="container has-text-centered">
         <h1 class="title is-1 publication-title">
-          TactileAloha: <span style="display: block;">Learning to Manipulate with Tactile Sensing</span>
+          TactileAloha: <span style="display: block;">Learning Bimanual Manipulation with Tactile Sensing</span>
+          <!-- TactileAloha: <span style="display: block;">Learning to Manipulate with Tactile Sensing</span> -->
       </h1>
-        <div class="is-size-5 publication-authors" style="display: flex; justify-content: center; gap: 20px;">
+        <div class="is-size-5 publication-authors" style="display: flex; justify-content: center; gap: 30px;">
           <div class="author-block">
             <a href="https://github.com/guningquan">Ningquan Gu</a>
           </div>
+          <div class="author-block">
+            Kazuhiro Kosuge
+        </div>
           <div class="author-block">
             <a href="https://neuro.mech.tohoku.ac.jp/member/">Mitsuhiro Hayashibe</a><sup>*</sup>
           </div>
@@ -162,16 +166,17 @@
         <div class="content has-text-justified">
           <p>
             Tactile texture is vital for robotic manipulation but is sometimes difficult to observe.
-	To address this issue, we propose TactileAloha, a tactile sensing module mounted on the Aloha system to provide texture information of touched objects, enhancing manipulation capabilities.
-	During the training process, tactile information is encoded by ResNet and combined with encoded camera images before being input into an Action Chunking with Transformers-based policy.
-	The policy then outputs a sequence of predicted actions, which is used to compute the loss against ground truth actions.
-	We define a novel loss function, assigning higher weights to more recent actions in the prediction sequence while exponentially decaying the weights of actions that are further away in the sequence.
-    To enhance performance, we co-train the policy with the previous Aloha dataset, despite its lack of tactile information and the presence of redundant data.
-	During deployment, we integrate Temporal Proximity Ensembling, which queries the policy at each timestep and aggregates the corresponding predicted actions within a preset temporal span. To enhance precision, more recent predictions are assigned higher importance, ensuring the policy remains focused on recent actions. This method improves action accuracy while preserving smoothness.
-	Experimentally, we introduce two tasks: zip-tie insertion and Velcro fastening, both of which are highly sensitive to the grasping orientation of objects.
-	Tactile sensing helps perceive the object's orientation, enhancing manipulation accuracy.
-	For the two tasks, we collect 80 and 50 demonstrations for training.
-	The results demonstrate that our approach, leveraging gripper tactile information, is capable of handling texture-related tasks, which cannot be addressed by camera vision-based methods. Moreover, our method achieves an average improvement of approximately 11.0% compared to SOTA, demonstrating its performance.
+		To address this issue, we propose TactileAloha, a tactile sensing module mounted on the Aloha system to provide texture information of touched objects, enhancing manipulation capabilities.
+		During the training process, tactile information is encoded by U-Net and combined with encoded camera images before being input into an Action Chunking with Transformers-based policy.
+		The policy then outputs a sequence of predicted actions, which is used to compute the loss against ground truth actions.
+		We define a novel loss function, assigning higher weights to more recent actions in the prediction sequence while exponentially decaying the weights of actions that are further away in the sequence.
+		We further design a pipeline to co-train the policy with the previous Aloha dataset, despite its lack of tactile information and redundant data.
+		During deployment, we integrate Temporal Proximity Ensembling, which queries the policy at each timestep and aggregates the corresponding predicted actions within a preset temporal span. To enhance precision, more recent predictions are assigned higher importance, ensuring the policy remains focused on recent predicted actions. 
+        This method improves action accuracy while preserving smoothness.
+		Experimentally, we introduce two bimanual tasks: zip-tie insertion and Velcro fastening, both of which are highly sensitive to the grasping orientation of objects.
+		Tactile sensing helps perceive the object's orientation, enhancing manipulation accuracy.
+		For the two tasks, we collect 80 and 50 demonstrations for training.
+		The results demonstrate that our approach, leveraging gripper tactile information, is capable of handling texture-related tasks, which cannot be addressed by camera vision-based methods. Moreover, our method achieves an average improvement of approximately 11.0% compared to SOTA, demonstrating its performance.
           </p>
         </div>
       </div>
