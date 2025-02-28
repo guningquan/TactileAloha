@@ -111,7 +111,7 @@
 <div class="column has-text-centered">
   <div class="publication-links">
     <!-- arXiv Link -->
-    <span class="link-block">
+    <!-- <span class="link-block">
       <a href="https://github.com/guningquan"
          class="external-link button is-normal is-rounded is-dark">
         <span class="icon">
@@ -119,7 +119,7 @@
         </span>
         <span>arXiv (coming Soon)</span>
       </a>
-    </span>
+    </span> -->
     
     <!-- Hardware Code Link -->
     <span class="link-block">
@@ -166,17 +166,17 @@
         <div class="content has-text-justified">
           <p>
             Tactile texture is vital for robotic manipulation but is sometimes difficult to observe.
-		To address this issue, we propose TactileAloha, a tactile sensing module mounted on the Aloha system to provide texture information of touched objects, enhancing manipulation capabilities.
-		During the training process, tactile information is encoded by U-Net and combined with encoded camera images before being input into an Action Chunking with Transformers-based policy.
-		The policy then outputs a sequence of predicted actions, which is used to compute the loss against ground truth actions.
-		We define a novel loss function, assigning higher weights to more recent actions in the prediction sequence while exponentially decaying the weights of actions that are further away in the sequence.
-		We further design a pipeline to co-train the policy with the previous Aloha dataset, despite its lack of tactile information and redundant data.
-		During deployment, we integrate Temporal Proximity Ensembling, which queries the policy at each timestep and aggregates the corresponding predicted actions within a preset temporal span. To enhance precision, more recent predictions are assigned higher importance, ensuring the policy remains focused on recent predicted actions. 
-        This method improves action accuracy while preserving smoothness.
-		Experimentally, we introduce two bimanual tasks: zip-tie insertion and Velcro fastening, both of which are highly sensitive to the grasping orientation of objects.
-		Tactile sensing helps perceive the object's orientation, enhancing manipulation accuracy.
-		For the two tasks, we collect 80 and 50 demonstrations for training.
-		The results demonstrate that our approach, leveraging gripper tactile information, is capable of handling texture-related tasks, which cannot be addressed by camera vision-based methods. Moreover, our method achieves an average improvement of approximately 11.0% compared to SOTA, demonstrating its performance.
+            To address this issue, we propose TactileAloha, a tactile sensing module mounted on the Aloha system to provide texture information of touched objects, enhancing manipulation capabilities.
+            During the training process, tactile information is encoded by U-Net and combined with encoded camera images before being input into an Action Chunking with Transformers-based policy.
+            The policy then outputs a sequence of predicted actions, which is used to compute the loss against ground truth actions.
+            We define a novel loss function, assigning higher weights to more recent actions in the prediction sequence while exponentially decaying the weights of actions that are further away in the sequence.
+            % We further design a pipeline to co-train the policy with the previous Aloha dataset, despite it lacks tactile information and contains redundant data.
+            During deployment, we integrate Temporal Proximity Ensembling, which queries the policy at each timestep and aggregates the corresponding predicted actions within a preset temporal span. To enhance precision, more recent predictions are assigned higher importance, ensuring the policy remains focused on recent predicted actions. 
+            This method improves action accuracy while preserving smoothness.
+            Experimentally, we introduce two bimanual tasks: zip-tie insertion and Velcro fastening, both of which are highly sensitive to the grasping orientation of objects.
+            Tactile sensing helps perceive the object's orientation, enhancing manipulation accuracy.
+            For the two tasks, we collect 80 and 50 demonstrations for training.
+            The results demonstrate that our approach, leveraging gripper tactile information, is capable of handling texture-related tasks, which cannot be addressed by camera vision-based methods. Moreover, our method achieves an average improvement of approximately 11.0% compared to SOTA, demonstrating its performance.
           </p>
         </div>
       </div>
@@ -228,14 +228,6 @@
             <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
           </div>
 
-        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-          <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
-            <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
-              <source src="./static/videos/zip-tie/zip-insert-incorrect.mp4" type="video/mp4">
-            </video>
-            <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Other methods using only Camera Vision (failed due to incorrect alignment)</h3>
-            <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
-          </div>
 
           <div style="width: 100%; margin-bottom: 20px;">
           <h3 class="subtitle is-4" style="font-weight: bold;" >2. Velcro Fastening Task</h3> <!-- 新添加的子标题 -->
@@ -258,6 +250,48 @@
                 <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
               </div>
 
+  </div>
+</section>
+
+<hr/>
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container content is-max-desktop">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2024,
+  author = {Cxx, xx},
+  month = {dec},
+  year = {2024},
+  articleno = {238},
+}</code></pre>
+  </div>
+</section> -->
+
+<section class="hero teaser">
+  <div class="hero-body" style="background: linear-gradient(135deg, #FF9A9E, #FAD0C4); padding: 20px 0;">
+    <div class="container is-max-desktop" style="text-align: center;">
+      <h2 class="title is-3" style="color: #FFFFFF; margin: 0;">Failure Case: Other Methods & No Tactile Info.</h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+	  <div style="height: 20px;"></div> <!-- 间隔 -->
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+          <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+            <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
+              <source src="./static/videos/zip-tie/zip-insert-incorrect.mp4" type="video/mp4">
+            </video>
+            <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Other methods using only Camera Vision (failed due to incorrect alignment)</h3>
+            <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
+          </div>
+
+          <div style="width: 100%; margin-bottom: 20px;">
+
+
               <!-- <div>
                 <center><span style="font-size:20px" class="line-break">Slide Ziploc</span></center>
                 <video width="800" muted loop controls>
@@ -277,21 +311,44 @@
   </div>
 </section>
 
-<hr/>
 
-<!-- <section class="section" id="BibTeX">
-  <div class="container content is-max-desktop">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2024,
-  author = {Cxx, xx},
-  month = {dec},
-  year = {2024},
-  articleno = {238},
-}</code></pre>
+<section class="hero teaser">
+  <div class="hero-body" style="background: linear-gradient(135deg, #FF9A9E, #FAD0C4); padding: 20px 0;">
+    <div class="container is-max-desktop" style="text-align: center;">
+      <h2 class="title is-3" style="color: #FFFFFF; margin: 0;">Failure Case: Our Methods are Combined with Co-training</h2>
+    </div>
   </div>
-</section> -->
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+	  <div style="height: 20px;"></div> <!-- 间隔 -->
+
+          <div style="width: 100%; margin-bottom: 20px;">
 
 
+              <!-- <div>
+                <center><span style="font-size:20px" class="line-break">Slide Ziploc</span></center>
+                <video width="800" muted loop controls>
+                  <source src="./static/videos/velcro/velcro_tactile_01.mp4" type="video/mp4">
+                </video>
+              </div> -->
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+                <video autoplay controls muted loop playsinline style="width: 100%; max-width: 600px;">
+                  <source src="./static/videos/zip-tie/co-train_2.mp4" type="video/mp4">
+                </video>
+                <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Our Method with co-training technique <span style="display: block;"></span> (Failed Due to the Premature Closing of the Gripper.)</h3>
+                <!-- <h3 class="has-text-centered" style="font-weight: bold; color: #FF0000;">Our Method</h3> -->
+              </div>
+    </div>
+  </div>
+</section>
+
+
+<hr/>
 
 <section class="footer">
   <div class="container content is-max-desktop" style="padding: 20px;">
