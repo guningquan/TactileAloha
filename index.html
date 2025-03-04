@@ -165,16 +165,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Tactile texture is vital for robotic manipulation but challenging for camera vision-based observation.
-        To address this, we propose TactileAloha, tactile sensing mounted on Aloha system to provide texture information, enhancing manipulation capabilities. 
-		During training, tactile information is encoded by pre-trained ResNet and combined with encoded camera images and joint values before being processed by an Action Chunking with Transformers-based policy, which predicts a sequence of actions.
-        We introduce a novel loss function, assigning higher weights to nearer actions in the prediction sequence while exponentially decaying further ones.
-        During deployment, we integrate Temporal Proximity Ensembling, which queries the policy at each timestep and aggregates the corresponding predicted actions within a preset temporal span,  where actions with the same timestep index are included in the aggregation.
-        To enhance precision, more recent predicted actions are assigned higher importance.
-        Experimentally, we introduce two bimanual tasks: zip-tie insertion and Velcro fastening, both requiring tactile sensing to perceive the orientation.
-	Our proposed method adaptively changes the generated manipulation sequence itself based on tactile sensing in a systematic manner.
-        Results show that our approach, leveraging gripper tactile information, can handle texture-related tasks, that camera vision-based methods fail to address.
-        Moreover, our method achieves an average improvement of approximately 11.0% compared to SOTA, demonstrating its performance.
+            Tactile texture is vital for robotic manipulation but challenging for camera vision-based observation. To address this, we propose TactileAloha, tactile sensing mounted on Aloha system to provide texture information, enhancing manipulation capabilities. During training, tactile information is encoded by pre-trained ResNet and combined with encoded camera images and joint values before being processed by an Action Chunking with Transformers-based policy, which predicts a sequence of actions. We introduce a novel loss function, assigning higher weights to nearer actions in the prediction sequence while exponentially decaying further ones. During deployment, we integrate Temporal Proximity Ensembling, which queries the policy at each timestep and aggregates the corresponding predicted actions within a preset temporal span,  where actions with the same timestep index are included in the aggregation. To enhance precision, more recent predicted actions are assigned higher importance. Experimentally, we introduce two bimanual tasks: zip-tie insertion and Velcro fastening, both requiring tactile sensing to perceive the orientation. Our proposed method adaptively changes the generated manipulation sequence itself based on tactile sensing in a systematic manner. Results show that our approach, leveraging gripper tactile information, can handle texture-related tasks, that camera vision-based methods fail to address. Moreover, our method achieves an average improvement of approximately 11.0% compared to SOTA, demonstrating its performance.
           </p>
         </div>
       </div>
