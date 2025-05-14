@@ -196,6 +196,51 @@
   </div>
 </section> -->
 
+
+
+<section class="hero teaser">
+  <div class="hero-body" style="background: linear-gradient(135deg, #8E2DE2, #4A00E0); padding: 20px 0;">
+    <div class="container is-max-desktop" style="text-align: center;">
+      <h2 class="title is-3" style="color: #FFFFFF; margin: 0;">Data Collection Process</h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+	  <div style="height: 20px;"></div> <!-- 间隔 -->
+
+      <!-- Real-time monitoring image block -->
+      <div style="width: 100%; margin-bottom: 20px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="./static/images/cv.jpg" alt="Real-time Monitoring Interface" style="width: 100%; max-width: 1000px; height: auto; border: 1px solid #ddd; border-radius: 6px;">
+          <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">
+           Fig.1. Real-time monitoring during teleoperation.
+            The interface includes observations from three cameras and visualized tactile feedback from the GelSight sensor (top-right image).
+            The timeline below shows the timestep progression during teleoperation data collection.
+          </h3>
+        </div>
+      </div>
+
+
+          <div style="width: 100%; margin-bottom: 20px;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+              <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
+                <video autoplay controls muted loop playsinline style="width: 100%; max-width: 1875px; height: auto;">
+                  <source src="./static/videos/demo/datasetcollection.mp4" type="video/mp4">
+                  <!-- <source src="./static/videos/zip-tie/co-train_2.mp4" type="video/mp4"> -->
+                </video>                
+                <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">The teleoperator performs the task by visually observing the scene directly and by monitoring sensor outputs on the screen, especially the visualized tactile information. The next action is determined based on this combined perception.
+                  
+                After completing the episode, the teleoperator decides whether it is successful. If it is, they press “C” to continue; otherwise, they press “R” to repeat the episode or “S” to stop. The operator uses a foot pad to facilitate this process.</h3>
+              </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="hero teaser">
   <div class="hero-body" style="background: linear-gradient(135deg, #56CCF2, #2F80ED); padding: 20px 0;">
     <div class="container is-max-desktop" style="text-align: center;">
@@ -349,10 +394,12 @@
 
 
 
+
+
 <section class="hero teaser">
-  <div class="hero-body" style="background: linear-gradient(135deg, #8E2DE2, #4A00E0); padding: 20px 0;">
+  <div class="hero-body" style="background: linear-gradient(135deg, #1e9b56, #42da49); padding: 20px 0;">
     <div class="container is-max-desktop" style="text-align: center;">
-      <h2 class="title is-3" style="color: #FFFFFF; margin: 0;">Data Collection Process</h2>
+      <h2 class="title is-3" style="color: #FFFFFF; margin: 0;">Ablation Videos</h2>
     </div>
   </div>
 </section>
@@ -363,33 +410,19 @@
     <div class="container is-max-desktop">
 	  <div style="height: 20px;"></div> <!-- 间隔 -->
 
-      <!-- Real-time monitoring image block -->
-      <div style="width: 100%; margin-bottom: 20px;">
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <img src="./static/images/cv.jpg" alt="Real-time Monitoring Interface" style="width: 100%; max-width: 1000px; height: auto; border: 1px solid #ddd; border-radius: 6px;">
-          <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">
-           Fig.1. Real-time monitoring during teleoperation.
-            The interface includes observations from three cameras and visualized tactile feedback from the GelSight sensor (top-right image).
-            The timeline below shows the timestep progression during teleoperation data collection.
-          </h3>
-        </div>
-      </div>
-
-
           <div style="width: 100%; margin-bottom: 20px;">
             <div style="display: flex; flex-wrap: wrap; justify-content: center;">
               <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-bottom: 20px;">
                 <video autoplay controls muted loop playsinline style="width: 100%; max-width: 1875px; height: auto;">
-                  <source src="./static/videos/demo/datasetcollection.mp4" type="video/mp4">
+                  <source src="./static/videos/demo/ablation_compress.mp4" type="video/mp4">
                   <!-- <source src="./static/videos/zip-tie/co-train_2.mp4" type="video/mp4"> -->
                 </video>                
-                <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">The teleoperator performs the task by visually observing the scene directly and by monitoring sensor outputs on the screen, especially the visualized tactile information. The next action is determined based on this combined perception.
-                  
-                After completing the episode, the teleoperator decides whether it is successful. If it is, they press “C” to continue; otherwise, they press “R” to repeat the episode or “S” to stop. The operator uses a foot pad to facilitate this process.</h3>
+                <h3 class="has-text-centered" style="font-weight: bold; margin-top: 12px;">Ablation Results on Zip-Tie Insertion Task. </h3>
               </div>
     </div>
   </div>
 </section>
+
 
 
 <hr/>
